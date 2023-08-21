@@ -21,7 +21,7 @@ const statsContent = {
     heading: 'Get Started with our services?',
     description:
       'We understand that protecting your loved ones is of utmost importance.',
-    img: '/images/illustration-women.svg',
+    img: '/images/illustration-woman.svg',
     cta: {
       cta_href: '#_',
       cta_label: 'Learn more',

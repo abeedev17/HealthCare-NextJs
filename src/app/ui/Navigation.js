@@ -33,25 +33,28 @@ const navigationMenu = [
 const Navigation = () => {
   const [navOpen, setNavOpen] = useState(false);
   const [dimension, setDiemension] = useState({
-    height: window.inhherHeight,
-    width: window.innerWidth,
+    height: typeof window!=="undefined"? window.inhherHeight:0,
+    width:  typeof window!=="undefined"? window.innerWidth:0,
   });
   const toggleNav = () => setNavOpen(!navOpen);
   useEffect(() => {
     function handleResize() {
       setDiemension({
-        height: window.inhherHeight,
-        width: window.innerWidth,
+        height: typeof window !== "undefined" ? window.innerHeight : 0,
+        width: typeof window !== "undefined" ? window.innerWidth : 0,
       });
       //when the window resize,we set the navOpen to false
       if (dimension.width > 768 && navOpen) {
         setNavOpen(false);
       }
     }
-    window.addEventListener("resize", handleResize);
-    return (_) => window.removeEventListener("resize", handleResize);
+    if(typeof window!=="undefined"){
+      window.addEventListener("resize", handleResize);
+      return (_) => window.removeEventListener("resize", handleResize);
+    }
+   
  
-});
+},[dimension.width,navOpen]);
 
   return (
     <>

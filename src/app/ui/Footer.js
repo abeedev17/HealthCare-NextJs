@@ -93,7 +93,7 @@ const Footer = () => {
     <footer role="contentinfo" className="bg-white py-20">
       <div className="container mx-auto px-4">
         <div className="block lg:flex gap-20 mb-10 pb-10">
-          <div className="w-full lg:w-4/12 mb-10 lg:mb-0">
+          <div className="w-full lg:w-4/12 mb-10 lg:mb-0" key="about">
             <Link href={"/"} className="mb-4 inline-block">
               <Image
                 src={FooterContent.about.logo}
@@ -117,16 +117,16 @@ const Footer = () => {
               </Link>
             </p>
           </div>
-          <div className="w-full lg:w-4/12 mb-10 lg:mb-0">
+          <div className="w-full lg:w-4/12 mb-10 lg:mb-0"key="footerLinks">
             <div className="grid grid-cols-2 gap-10">
               {FooterContent.footerLinks.map((item, index) => (
-                <div>
+                <div key={index}>
                   <h3 className="font-semibold text-heading mb-5">
                     {item.heading}
                   </h3>
                   <ul className="p-0 m-0">
                     {item.links.map((link, index) => (
-                      <li className="mb-3">
+                      <li className="mb-3" key={index}>
                         <Link
                           href={link.href}
                           className="group-flex items-center duration-300 transition-all ease-in-out hover:text-primary"
@@ -143,7 +143,7 @@ const Footer = () => {
               ))}
             </div>
           </div>
-          <div className="w-4/12 lg:w-4/12">
+          <div className="w-4/12 lg:w-4/12" key="contact">
           <h3 className="font-semibold text-heading mb-5">
           {FooterContent.contact.heading}
           </h3>
@@ -167,7 +167,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="text-center pt-10 border-t border-gray-200">
+        <div className="text-center pt-10 border-t border-gray-200" key="copyright">
         <p>
         {
             FooterContent.copyright.labelOne

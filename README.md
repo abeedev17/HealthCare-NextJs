@@ -1,5 +1,10 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+#### demo image
+
+![image](https://github.com/Rana-Sagar/HealthCare-NextJs/assets/117373938/d92c91fd-888c-4a46-9a55-4dc3f43d68e5)
+
+
 ## Getting Started
 
 First, run the development server:
